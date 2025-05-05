@@ -4,67 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chris Hofeldt - Portfolio</title>
-  <!-- Tailwind CSS CDN -->
+  <!-- Google Fonts: VCR OSD Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN with Custom Config -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'neon-pink': '#FF00FF',
+            'neon-cyan': '#00FFFF',
+            'neon-purple': '#800080',
+            'retro-dark': '#1A1A1A',
+          },
+          fontFamily: {
+            retro: ['"Press Start 2P"', 'monospace'],
+          },
+          boxShadow: {
+            'neon-glow': '0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #00FFFF',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* Scanline effect */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 2px,
+        rgba(0, 0, 0, 0.1) 4px
+      );
+      pointer-events: none;
+      z-index: 10;
+    }
+    /* Retro background */
+    body {
+      background: radial-gradient(circle at center, #800080 0%, #1A1A1A 70%);
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="font-retro text-neon-cyan">
   <!-- Navigation -->
-  <nav class="bg-blue-600 text-white p-4 sticky top-0 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold">Chris Hofeldt</a>
+  <nav class="bg-transparent border-b-4 border-neon-pink sticky top-0 shadow-neon-glow z-20">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <a href="#" class="text-2xl text-neon-pink shadow-neon-glow">Chris Hofeldt</a>
       <ul class="flex space-x-6">
-        <li><a href="#home" class="hover:underline">Home</a></li>
-        <li><a href="#about" class="hover:underline">About</a></li>
-        <li><a href="#projects" class="hover:underline">Projects</a></li>
-        <li><a href="#contact" class="hover:underline">Contact</a></li>
+        <li><a href="#home" class="hover:text-neon-pink hover:shadow-neon-glow transition">Home</a></li>
+        <li><a href="#about" class="hover:text-neon-pink hover:shadow-neon-glow transition">About</a></li>
+        <li><a href="#projects" class="hover:text-neon-pink hover:shadow-neon-glow transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-neon-pink hover:shadow-neon-glow transition">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="bg-blue-100 py-20 text-center">
+  <section id="home" class="py-20 text-center">
     <div class="container mx-auto">
-      <h1 class="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-      <p class="text-lg mb-6">Hi, I'm Chris Hofeldt. This is my professional portfolio showcasing my work and skills.</p>
-      <a href="#projects" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">View Projects</a>
+      <h1 class="text-4xl text-neon-pink shadow-neon-glow mb-4">Welcome to My Portfolio</h1>
+      <p class="text-lg mb-6 text-neon-cyan">
+        Hi, I'm Chris Hofeldt. This is my professional portfolio showcasing my work and skills.
+      </p>
+      <a href="#projects" class="bg-neon-purple text-neon-cyan px-6 py-2 rounded shadow-neon-glow hover:bg-neon-pink transition">View Projects</a>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="py-20">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-lg max-w-2xl mx-auto">
-        [Replace with your bio from the Wix site. E.g., "I'm a passionate developer with expertise in web development..."]
+      <h2 class="text-3xl text-neon-pink shadow-neon-glow mb-6">About Me</h2>
+      <p class="text-lg text-neon-cyan max-w-2xl mx-auto">
+        With a Bachelor of Science in Software Development, I am passionate about leveraging my skills to solve complex problems and create innovative software solutions. My goal is to improve people's lives through technology, making everyday tasks easier and more efficient.
       </p>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="bg-gray-200 py-20">
+  <section id="projects" class="py-20">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
+      <h2 class="text-3xl text-neon-pink shadow-neon-glow text-center mb-10">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Project Card 1 -->
-        <div class="bg-white p-6 rounded shadow-md">
+        <div class="bg-retro-dark p-6 rounded border-4 border-neon-cyan shadow-neon-glow">
           <img src="images/project1.jpg" alt="Project 1" class="w-full h-48 object-cover mb-4 rounded">
-          <h3 class="text-xl font-semibold mb-2">Project 1</h3>
-          <p>[Replace with project description from Wix site]</p>
-          <a href="#" class="text-blue-600 hover:underline">Learn More</a>
+          <h3 class="text-xl text-neon-pink mb-2">Project 1</h3>
+          <p class="text-neon-cyan">[Replace with project description from Wix site]</p>
+          <a href="#" class="text-neon-pink hover:shadow-neon-glow transition">Learn More</a>
         </div>
         <!-- Project Card 2 -->
-        <div class="bg-white p-6 rounded shadow-md">
+        <div class="bg-retro-dark p-6 rounded border-4 border-neon-cyan shadow-neon-glow">
           <img src="images/project2.jpg" alt="Project 2" class="w-full h-48 object-cover mb-4 rounded">
-          <h3 class="text-xl font-semibold mb-2">Project 2</h3>
-          <p>[Replace with project description from Wix site]</p>
-          <a href="#" class="text-blue-600 hover:underline">Learn More</a>
+          <h3 class="text-xl text-neon-pink mb-2">Project 2</h3>
+          <p class="text-neon-cyan">[Replace with project description from Wix site]</p>
+          <a href="#" class="text-neon-pink hover:shadow-neon-glow transition">Learn More</a>
         </div>
         <!-- Project Card 3 -->
-        <div class="bg-white p-6 rounded shadow-md">
+        <div class="bg-retro-dark p-6 rounded border-4 border-neon-cyan shadow-neon-glow">
           <img src="images/project3.jpg" alt="Project 3" class="w-full h-48 object-cover mb-4 rounded">
-          <h3 class="text-xl font-semibold mb-2">Project 3</h3>
-          <p>[Replace with project description from Wix site]</p>
-          <a href="#" class="text-blue-600 hover:underline">Learn More</a>
+          <h3 class="text-xl text-neon-pink mb-2">Project 3</h3>
+          <p class="text-neon-cyan">[Replace with project description from Wix site]</p>
+          <a href="#" class="text-neon-pink hover:shadow-neon-glow transition">Learn More</a>
         </div>
       </div>
     </div>
@@ -73,16 +121,20 @@
   <!-- Contact Section -->
   <section id="contact" class="py-20 text-center">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-      <p class="text-lg mb-6">Feel free to reach out for collaborations or inquiries!</p>
-      <p class="text-lg">Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">chrishofeldt@proton.me</a></p>
-      <p class="text-lg">LinkedIn: <a href="https://linkedin.com/in/yourprofile" class="text-blue-600 hover:underline">https://www.linkedin.com/in/christopher-hofeldt/</a></p>
+      <h2 class="text-3xl text-neon-pink shadow-neon-glow mb-6">Get in Touch</h2>
+      <p class="text-lg text-neon-cyan mb-6">Feel free to reach out for collaborations or inquiries!</p>
+      <p class="text-lg text-neon-cyan">
+        Email: <a href="mailto:chrishofeldt@proton.me" class="text-neon-pink hover:shadow-neon-glow transition">chrishofeldt@proton.me</a>
+      </p>
+      <p class="text-lg text-neon-cyan">
+        LinkedIn: <a href="https://www.linkedin.com/in/christopher-hofeldt/" class="text-neon-pink hover:shadow-neon-glow transition">https://www.linkedin.com/in/christopher-hofeldt/</a>
+      </p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white p-4 text-center">
-    <p>&copy; 2025 Chris Hofeldt. All rights reserved.</p>
+  <footer class="bg-retro-dark text-neon-cyan p-4 text-center border-t-4 border-neon-pink">
+    <p>© 2025 Chris Hofeldt. All rights reserved.</p>
   </footer>
 </body>
 </html>
